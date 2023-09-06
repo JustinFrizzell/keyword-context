@@ -1,23 +1,21 @@
 {
   "name": "keyword-context",
-  "displayName": "keyword-context",
-  "description": "",
+  "displayName": "Keyword Context",
+  "description": "Provides user-supplied hover context for keywords detected in the editor.",
   "version": "0.0.1",
+  "icon": "icon.png",
   "engines": {
-    "vscode": "^1.81.0"
+    "vscode": "^1.60.1"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "keyword-context.helloWorld",
-        "title": "Hello World"
-      }
-    ]
+    "commands": []
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -28,7 +26,7 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.81.0",
+    "@types/vscode": "^1.60.0",
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
