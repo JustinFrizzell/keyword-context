@@ -1,12 +1,8 @@
 import * as vscode from "vscode";
+import { Context } from "./contextType";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('Extension "keyword-context" is now active');
-
-  interface Context {
-    keyword: string;
-    tooltip: string;
-  }
 
   let keywordTooltips: Context[] = fetchKeywordTooltips();
   let sourceToggle: boolean = fetchSourceToggle();
