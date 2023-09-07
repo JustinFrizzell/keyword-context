@@ -15,7 +15,34 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": []
+    "configuration": {
+      "title": "Map",
+      "properties": {
+        "keyword-context.map": {
+          "type": "array",
+          "default": [
+            {
+              "keyword": "some_badly_named_variable",
+              "tooltip": "This variable is used for..."
+            },
+            {
+              "keyword": "some_badly_named_function",
+              "tooltip": "This function does..."
+            },
+            {
+              "keyword": "ID_234873",
+              "tooltip": "This ID refers to..."
+            }
+          ],
+          "description": "Add keywords and their tooltips to settings.json"
+        },
+        "keyword-context.source-toggle": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show the source of the tooltip on hover."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -26,7 +53,7 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.60.0",
+    "@types/vscode": "^1.60.1",
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
