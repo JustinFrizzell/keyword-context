@@ -1,6 +1,7 @@
 import * as vscode from "vscode";
 import { Context } from "./contextType";
 import { fetchKeywordTooltips, fetchSourceToggle } from "./configManager";
+import { provideHover } from "./hoverProvider";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('Extension "keyword-context" is now active');
@@ -17,39 +18,10 @@ export function activate(context: vscode.ExtensionContext) {
     }
   });
 
-  function findTooltipsByKeyword(keywordToFind: string): Context[] {
-    const normalizedKeyword = keywordToFind.toLowerCase();
-    return keywordTooltips.filter(
-      (item) =>
-        item.keyword.toLowerCase() === normalizedKeyword ||
-        "." + item.keyword.toLowerCase() === normalizedKeyword
-    );
-  }
-
   const hoverProvider = vscode.languages.registerHoverProvider("*", {
     provideHover(document, position) {
-      const wordRange = document.getWordRangeAtPosition(position);
-      const word = document.getText(wordRange);
-
-      if (!word) return;
-
-      const matchedTooltips = findTooltipsByKeyword(word);
-
-      if (!matchedTooltips.length) return;
-
-      const hoverText = new vscode.MarkdownString("", true);
-
-      for (const tooltip of matchedTooltips) {
-        hoverText.appendMarkdown(`- ${tooltip.tooltip}\n`);
-      }
-
-      if (sourceToggle) {
-        hoverText.appendMarkdown("\n*(Keyword Context)*");
-      }
-
-      return new vscode.Hover(hoverText, wordRange);
+      return provideHover(document, position, keywordTooltips, sourceToggle);
     },
   });
-
   context.subscriptions.push(hoverProvider);
 }
