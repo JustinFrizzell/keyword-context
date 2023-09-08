@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import { Context } from "./contextType";
+import { fetchKeywordTooltips, fetchSourceToggle } from "./configManager";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('Extension "keyword-context" is now active');
@@ -15,18 +16,6 @@ export function activate(context: vscode.ExtensionContext) {
       sourceToggle = fetchSourceToggle();
     }
   });
-
-  function fetchKeywordTooltips(): Context[] {
-    return (
-      vscode.workspace.getConfiguration("keyword-context").get("map") || []
-    );
-  }
-
-  function fetchSourceToggle(): boolean {
-    return !!vscode.workspace
-      .getConfiguration("keyword-context")
-      .get("source-toggle");
-  }
 
   function findTooltipsByKeyword(keywordToFind: string): Context[] {
     const normalizedKeyword = keywordToFind.toLowerCase();
