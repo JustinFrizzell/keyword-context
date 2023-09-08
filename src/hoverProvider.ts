@@ -18,8 +18,13 @@ export function provideHover(
 
   const hoverText = new vscode.MarkdownString("", true);
 
-  for (const tooltip of matchedTooltips) {
-    hoverText.appendMarkdown(`- ${tooltip.tooltip}\n`);
+  // Check if only one tooltip is found
+  if (matchedTooltips.length === 1) {
+    hoverText.appendMarkdown(`${matchedTooltips[0].tooltip}`);
+  } else {
+    for (const tooltip of matchedTooltips) {
+      hoverText.appendMarkdown(`- ${tooltip.tooltip}\n`);
+    }
   }
 
   if (sourceToggle) {
