@@ -2,7 +2,7 @@
   "name": "keyword-context",
   "displayName": "Keyword Context",
   "description": "Provides user-supplied hover context for keywords detected in the editor.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "icon": "icon.png",
   "repository": {
     "type": "git",
@@ -15,6 +15,13 @@
   },
   "categories": [
     "Other"
+  ],
+  "badges": [
+    {
+      "url": "https://dev.azure.com/justinfrizzell/Keyword%20Context/_apis/build/status%2FJustinFrizzell.keyword-context?branchName=main",
+      "href": "https://dev.azure.com/justinfrizzell/Keyword%20Context/_build/latest?definitionId=1&branchName=main",
+      "description": "Test Status"
+    }
   ],
   "activationEvents": [
     "onStartupFinished"
