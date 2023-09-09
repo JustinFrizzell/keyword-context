@@ -39,4 +39,8 @@ Once installed in Visual Studio Code, add your keywords and the associated toolt
 | keyword-context.map           | `[...,...]` | Array of Context objects, each Context must contain the keys "keyword" and "tooltip". The value given to "tooltip" will appear when the value of "keyword" is hovered over in the editor |
 | keyword-context.source-toggle | `False`     | Setting to control if the extension source "Keyword Context" is shown after the tooltip.                                                                                                 |
 
+## License
+
+[MIT License](https://github.com/JustinFrizzell/keyword-context/blob/main/LICENSE)
+
 Icon created by Smashicons

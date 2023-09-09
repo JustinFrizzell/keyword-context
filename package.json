@@ -4,6 +4,12 @@
   "description": "Provides user-supplied hover context for keywords detected in the editor.",
   "version": "0.0.1",
   "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JustinFrizzell/keyword-context"
+  },
+  "homepage": "https://github.com/JustinFrizzell/keyword-context/blob/main/README.md",
+  "license": "https://github.com/JustinFrizzell/keyword-context/blob/main/LICENSE",
   "engines": {
     "vscode": "^1.60.1"
   },
