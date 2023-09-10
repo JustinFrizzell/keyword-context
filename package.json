@@ -1,5 +1,6 @@
 {
   "name": "keyword-context",
+  "publisher": "JustinFrizzell",
   "displayName": "Keyword Context",
   "description": "Provides user-supplied hover context for keywords detected in the editor.",
   "version": "1.0.0",

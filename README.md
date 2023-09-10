@@ -10,6 +10,8 @@ A Visual Studio Code extension that provides user-supplied hover context for key
 - You use long IDs with special meanings and want to add context to avoid manually looking them up
 - You're learning to code in a new language and want to add notes to keywords
 
+![Screenshot showing tooltip](https://raw.githubusercontent.com/JustinFrizzell/keyword-context/main/usage.png)
+
 ## Usage
 
 Once installed in Visual Studio Code, add your keywords and the associated tooltip messages to settings.json:
